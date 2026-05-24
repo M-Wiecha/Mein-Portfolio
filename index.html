@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Mario Wiecha | Webdesign & Digitale Entwicklung",
+        "image": "https://mario-wiecha.de/assets/images/dein-profilbild.jpg",
+        "@id": "https://mario-wiecha.de/#agentur",
+        "url": "https://mario-wiecha.de",
+        "telephone": "+49123456789",
+        "priceRange": "€€",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Sankt-Petri-Straße",
+          "addressLocality": "Wusterhausen/Dosse",
+          "postalCode": "16868",
+          "addressCountry": "DE"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 52.8914,
+          "longitude": 12.4632
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/mario-wiecha-dein-profil",
+          "https://github.com/dein-github-name"
+        ],
+        "knowsAbout": [
+          "Webdesign",
+          "Figma",
+          "HTML5 & CSS3",
+          "Responsive Design",
+          "Barrierefreies Webdesign (Accessibility)",
+          "Search Engine Optimization (SEO)",
+          "Generative Engine Optimization (GEO)"
+        ],
+        "description": "Moderner Webdesigner aus Wusterhausen/Dosse. Spezialisiert auf die Umsetzung von Figma-Designs in performanten, barrierefreien HTML/CSS-Code für KMU, Handwerk und Dienstleister.",
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Wusterhausen/Dosse"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Kyritz"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Ostprignitz-Ruppin"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Deutschland"
+          }
+        ]
+      }
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Hi, ich bin Mario – Ein leidenschaftlicher Webdesigner für individuelle Websites, Webentwicklung und WordPress-Lösungen."
+    />
+    <meta
+      name="keywords"
+      content="Webdesigner, Mario Wiecha, Portfolio, Webdesign, WordPress, moderne Websites, Webentwicklung, Freelancer, Referenzen, Leistungen"
+    />
+    <meta name="author" content="Mario Wiecha" />
+    <meta name="theme-color" content="#8B0000" />
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta property="og:title" content="Mario Wiecha | Webdesigner" />
+    <meta
+      property="og:description"
+      content="Hi, ich bin Mario – Ein leidenschaftlicher Webdesigner für individuelle Websites, Webentwicklung und WordPress-Lösungen."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="img/background.png" />
+    <meta property="og:url" content="mario-wiecha.de" />
+    <!-- Haupt-CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="icon" type="image/png" href="/img/logo.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/img/logo.png" />
+    <link rel="shortcut icon" href="/img/logo.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/logo.png" />
+    <meta
+      name="apple-mobile-web-app-title"
+      content="Mario Wiecha | Webdesigner"
+    />
+    <title>Mario Wiecha | Webdesigner</title>
+  </head>
+  <body>
+    <!--<div id="maintenance">
+      <h1>Wartungsarbeiten</h1>
+      <p>
+        Ich arbeite gerade an einem frischen Design für mein Portfolio. In Kürze
+        bin ich wieder Online.
+      </p>
+      <div id="countdown">Lädt...</div>
+      <p>Danke für eure Geduld!</p>
+    </div> -->
+    <div class="navbar">
+      <div class="logo">
+        <a href="#"><h1>Webdesigner Mario</h1></a>
+      </div>
+      <!-- Hamburger Icon -->
+      <div class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <ul id="nav-links">
+        <li><a href="#my-skills" class="nav-button">Leistungen</a></li>
+        <li><a href="#portfolio" class="nav-button">Referenzen</a></li>
+      </ul>
+    </div>
+    <header class="header-radius">
+      <div class="headcontainer">
+        <div class="mario-profile-card">
+          <div class="card-photo-container right-overlap">
+            <img
+              src="img/ich.png"
+              alt="Webdesigner Mario"
+              class="profile-photo"
+            />
+          </div>
+          <div class="card-content">
+            <h2 class="card-title">Mario Wiecha</h2>
+            <p class="card-subtitle">Leidenschaftlicher Webdesigner</p>
+            <p class="card-description">
+              Spezialisiert auf modernes Webdesign, SEO-Optimierung und
+              responsive Websites alles aus einer Hand ...
+              <a
+                href="#"
+                id="ueber_mich"
+                style="margin: 0; color: #fff; text-decoration: none"
+                >mehr</a
+              >
+            </p>
+            <a href="#my-skills" class="card-button">Zu meinen Leistungen</a>
+            <!-- Weihnachten und Silvester -->
+            <div id="navbar-season-display">
+              <span id="season-content"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!----------------------------->
+      <!-- Meine Leistungen Anfang -->
+      <!----------------------------->
+      <section id="my-skills" class="cards-section">
+        <div class="section-intro">
+          <h2>Meine Leistungen</h2>
+          <p>
+            Ein starker Webauftritt ist heute wichtiger denn je. Ich unterstütze
+            dich dabei, eine Webseite zu gestalten, die nicht nur gut aussieht,
+            sondern auch technisch überzeugt und deine Zielgruppe erreicht. Egal
+            ob neue Landingpage oder die Überarbeitung einer bestehenden Seite –
+            ich sorge für ein modernes und benutzerfreundliches Ergebnis.
+          </p>
+        </div>
+        <div class="card-grid">
+          <!----------------------------->
+          <!-- Einzelne Leistungscards -->
+          <!----------------------------->
+          <div class="card">
+            <div class="card-header">
+              <h3>Website Neugestaltung</h3>
+            </div>
+            <div class="card-body">
+              <p>
+                Du startest neu durch? Ich gestalte für dich eine komplett neue
+                Website, die modern, schnell und suchmaschinenoptimiert ist.
+                Perfekt auf dein Unternehmen abgestimmt – mit ansprechendem
+                Design, klarer Struktur und optimaler Darstellung auf allen
+                Geräten. So wird dein Online-Auftritt zum echten Hingucker und
+                überzeugt auf den ersten Blick.
+              </p>
+            </div>
+            <div class="card-footer">
+              <span class="price">ab 900 €</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Website ReDesign</h3>
+            </div>
+            <div class="card-body">
+              <p>
+                Deine bestehende Website braucht frischen Schwung? Ich
+                überarbeite dein aktuelles Design technisch und optisch – für
+                eine moderne, benutzerfreundliche und SEO-optimierte Website.
+                Ideal, wenn du deinen Online-Auftritt verbessern willst, ohne
+                komplett neu zu starten.
+              </p>
+            </div>
+            <div class="card-footer">
+              <span class="price">ab 500 €</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Website Pflege</h3>
+            </div>
+            <div class="card-body">
+              <p>
+                Regelmäßige Aktualisierung, Sicherheit und Optimierung deiner
+                Website – damit sie stets technisch einwandfrei und inhaltlich
+                aktuell bleibt.
+              </p>
+            </div>
+            <div class="card-footer">
+              <span class="price">ab 250 €/Monat</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!----------------------------->
+      <!--- Meine Leistungen Ende --->
+      <!----------------------------->
+      <!-- Meine Referenzen Anfang -->
+      <!----------------------------->
+      <section id="portfolio" class="portfolio-section">
+        <div class="container">
+          <h2 class="section-title">Meine Webprojekte</h2>
+          <p class="section-subtitle">
+            Ein Auszug aus meinen bisherigen Arbeiten und Entwicklungen
+          </p>
+
+          <div class="card-grid" id="portfolioGrid"></div>
+        </div>
+      </section>
+      <!----------------------------->
+      <!--- Meine Referenzen Ende --->
+      <!----------------------------->
+    </main>
+    <footer class="footer-radius">
+      <div class="footer-inhalt">
+        <div>
+          <h4>Kontaktmöglickeiten</h4>
+          <p>
+            Fragen, Wünsche oder Beratungsbedarf?<br />Hinterlasse mir hier eine
+            kurze Nachricht.
+          </p>
+          <form id="contactForm">
+            <input
+              type="text"
+              name="name"
+              placeholder="Dein Name"
+              aria-label="Dein Name"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Deine E-Mail"
+              required
+            />
+            <input
+              type="text"
+              name="betreff"
+              placeholder="Betreff"
+              aria-label="Betreff"
+              maxlength="150"
+            />
+            <textarea
+              name="nachricht"
+              placeholder="Deine Nachricht"
+              required
+            ></textarea>
+
+            <button type="submit" id="submitBtn">Nachricht senden</button>
+
+            <div
+              id="formResponse"
+              style="margin-top: 15px; display: none"
+            ></div>
+          </form>
+          <p>
+            Oder schreibe mir hier einfach eine Mail:<br />
+            <a href="mailto:kontakt@mario-wiecha.de" class="mailto"
+              >kontakt@mario-wiecha.de</a
+            >
+          </p>
+        </div>
+        <div class="zertifikat">
+          <h4>Zertifikat</h4>
+          <p>Hier ist mein Abschlusszertifikat im Bereich Webdesign.</p>
+          <img src="img/zertifikat.png" alt="Zertifikat Webdesign & SEO" />
+        </div>
+      </div>
+      <div class="footer-navbar">
+        <div class="footer-links">
+          <a
+            href="#"
+            id="impressum-link"
+            style="margin: 0 10px; color: #666; text-decoration: none"
+            >Impressum</a
+          >
+          |
+          <a
+            href="#"
+            id="datenschutz-link"
+            style="margin: 0 10px; color: #666; text-decoration: none"
+            >Datenschutz</a
+          >
+        </div>
+      </div>
+      <p class="hinweis">
+        Kein Ausweis von Umsatzsteuern gemäß Kleinunternehmerregelung §19 UStG
+      </p>
+      <small>
+        <p class="copyright">
+          &copy; <span id="jahr"></span> by Mario Wiecha | Webdesigner. Alle
+          Rechte vorbehalten.
+        </p>
+      </small>
+    </footer>
+    <!-- Haupt-JavaScript -->
+    <script src="js/styles.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+  </body>
+</html>

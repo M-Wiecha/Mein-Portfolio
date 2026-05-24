@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Bild auf der Homepage -->
+  <url>
+    <loc>https://www.webdesigner-mario.de/</loc>
+    <image:image>
+      <image:loc>https://www.webdesigner-mario.de/img/images/ich.png</image:loc>
+      <image:title>Mario Wiecha | Webdesigner</image:title>
+      <image:caption>Ich bin ein erfahrener Webdesigner, spezialisiert auf moderne, responsive Websites.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Bild auf der Portfolio-Seite -->
+  <url>
+    <loc>https://www.webdesigner-mario.de/portfolio</loc>
+    <image:image>
+      <image:loc>https://www.webdesigner-mario.de/images/projekt1.jpg</image:loc>
+      <image:title>Projekt 1 - Webdesign</image:title>
+      <image:caption>Beispiel für ein Webdesign-Projekt</image:caption>
+    </image:image>
+  </url>
+
+</urlset>

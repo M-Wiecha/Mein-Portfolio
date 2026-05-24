@@ -1,0 +1,7 @@
+# Erlaube allen Suchmaschinen das Crawlen
+User-agent: *
+Disallow:
+
+# Sitemap-Links hinzufügen
+Sitemap: https://www.webdesigner-mario.de/sitemap.xml
+Sitemap: https://www.webdesigner-mario.de/image-sitemap.xml

@@ -1,0 +1,1236 @@
+/*!
+* Mario Wiecha | Webdesigner
+* www.mario-wiecha.de
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Wartungsmodus-Styling */
+#maintenance {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Verdunklung der Website */
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  text-align: center;
+}
+
+#maintenance h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#maintenance p {
+  font-size: 18px;
+}
+#countdown {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+html,
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #333;
+  scroll-behavior: smooth;
+  scroll-padding-top: 60px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.navbar {
+  background: linear-gradient(
+    135deg,
+    rgba(139, 0, 0, 0.7),
+    rgba(51, 51, 51, 0.7)
+  );
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#navbar-season-display {
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  padding: 5px 10px;
+  white-space: nowrap; /* Verhindert Zeilenumbruch in der Navbar */
+  display: none;
+}
+
+.navbar .logo a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navbar .logo h1 {
+  font-size: 2rem;
+  font-family: "Dancing Script", cursive;
+  font-style: normal;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.45);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.navbar ul li {
+  margin-left: 20px;
+}
+
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1em;
+  transition:
+    color 0.3s,
+    text-decoration 0.3s;
+  letter-spacing: 0.02em;
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.navbar ul li a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ff9900;
+}
+
+/* Hamburger Menü Animation */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* ===== Animation beim Klick ===== */
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+header {
+  margin-top: 60px; /* Platz für die fixe Navbar */
+  position: relative;
+  z-index: 100;
+}
+
+.headbild img {
+  max-width: 350px;
+  border-radius: 50%;
+  box-shadow: inset 20px 20px 20px 20px rgba(0, 0, 0, 0.15);
+  border: solid 3px rgba(255, 255, 255, 0.25);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.header-radius {
+  background: linear-gradient(135deg, rgb(139, 0, 0), rgb(51, 51, 51));
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  border-bottom-left-radius: 50% 15%;
+  border-bottom-right-radius: 50% 15%;
+  border-bottom: #ff9900 solid 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 1);
+}
+
+/* Headerbereich */
+
+/* Container & Karte */
+.mario-profile-card {
+  display: flex;
+  background: linear-gradient(
+    145deg,
+    rgb(42, 42, 42, 0.25),
+    rgb(26, 26, 26, 0.25)
+  ); /* Dunkler Verlauf */
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  max-width: 750px;
+  width: 95%;
+  margin: 50px auto;
+  padding: 30px;
+  position: relative;
+  min-height: 200px;
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Foto-Container */
+.card-photo-container {
+  width: 140px;
+  height: 140px;
+  position: absolute;
+  z-index: 10;
+}
+
+/* Positionierung Rechts oben (wie im Screenshot gewünscht) */
+.right-overlap {
+  top: -40px;
+  right: -20px;
+}
+
+/* Positionierung Links oben (Alternative) */
+.left-overlap {
+  top: -40px;
+  left: -20px;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgb(179, 0, 0); /* Passend zum Rot der Seite */
+  box-shadow: 0 8px 20px rgba(179, 0, 0, 4);
+  transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.08) rotate(3deg);
+}
+
+/* Textinhalte */
+.card-content {
+  /* Padding anpassen, wenn das Foto rechts ist */
+  padding-right: 130px;
+  flex-grow: 1;
+}
+
+/* Falls Foto links ist, Padding tauschen */
+.left-overlap + .card-content {
+  padding-right: 0;
+  padding-left: 130px;
+}
+
+.card-title {
+  font-size: 2rem;
+  font-family: "Dancing Script", cursive;
+  font-style: normal;
+  font-weight: 400;
+  margin: 0 0 5px 0;
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.card-subtitle {
+  color: #ff9900; /* Akzentfarbe */
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.card-description {
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.card-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #8b0000 60%, #ff9900 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.card-button:hover {
+  background: linear-gradient(135deg, #ff9900 0%, #8b0000 100%);
+  transform: translateY(-2px);
+}
+
+/* Mainbereich mit Sections */
+
+main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+section {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #8b0000;
+  text-align: center;
+  text-decoration: underline #333;
+}
+
+section p {
+  font-size: 1rem;
+  color: #ccc;
+  text-align: center;
+}
+
+.headcontainer {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.headtext {
+  max-width: 600px;
+  color: #ccc;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.cards-section {
+  max-width: 1200px;
+  margin: 1.5rem auto;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.section-intro {
+  margin-bottom: 1rem;
+}
+
+.section-intro h2 {
+  font-weight: bolder;
+  font-size: 2rem;
+  font-family: "Dancing Script", cursive;
+  font-style: normal;
+  font-weight: 400;
+  color: #ff9900;
+  text-decoration: underline #333;
+}
+
+.section-intro p {
+  color: rgb(204, 204, 204);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* GRID-LAYOUT für 3-2-1 Spalten */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* CARD-GRUNDSTIL */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgb(255 255 255 / 0%);
+  border-radius: 1.5rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  padding: 1.5rem;
+  min-height: 320px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.card-header {
+  /* optional: Abstand und begrenzte Höhe für Vorschaubilder */
+  padding-bottom: 0.6rem;
+  overflow: hidden;
+  border-radius: 12px;
+  justify-content: center;
+}
+
+.card-header img {
+  display: block;
+  width: 35%;
+  height: auto;
+  max-height: 220px;
+  object-fit: cover; /* zuschneiden ohne Verzerrung */
+  object-position: center; /* zentriert das Motiv */
+  border-radius: 8px;
+}
+
+/* HEADER-BEREICH */
+.card-header h3 {
+  font-family: "Dancing Script", cursive;
+  font-style: normal;
+  font-weight: 400;
+  color: #ff9900;
+  text-decoration: underline #333;
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
+}
+
+/* BODY-BEREICH */
+.card-body {
+  flex: 1; /* wächst automatisch, hält Abstände */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertikal zentrieren innerhalb der Card */
+  align-items: center; /* horizontal zentrieren */
+  text-align: center; /* Zentriert mehrzeiligen Text */
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* FOOTER-BEREICH */
+.card-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.card-footer .price {
+  font-weight: bold;
+  color: #20ab1b;
+  background-color: #e8f5e9; /* Sehr helles Grün als Hintergrund */
+  padding: 5px 12px; /* Innenabstand für den Badge-Effekt */
+  border-radius: 20px; /* Rundet die Ecken stark ab */
+  font-size: 1.1rem;
+  border: 1px solid #20ab1b; /* Optional: Ein feiner grüner Rahmen */
+  display: inline-block; /* Damit das Padding sauber wirkt */
+}
+
+.card-footer button {
+  background-color: #20ab1b;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.card-footer button a {
+  background-color: #188a15;
+}
+
+.card-footer button:hover {
+  background: #188a15;
+  box-shadow: 0 4px 12px rgba(32, 171, 27, 0.2);
+}
+
+.button {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Hover / Fokus (nur wenn nicht disabled) */
+.button:not([disabled]):hover,
+.button:not([disabled]):focus {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(139, 0, 0, 0.18);
+  outline: none;
+}
+
+/* Deaktivierter Zustand */
+.button[disabled],
+.button:disabled {
+  background: linear-gradient(180deg, #6f6f6f, #4f4f4f);
+  color: #e6e6e6;
+  opacity: 0.65;
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Optional: kurzer Hinweis direkt unter dem Button (wenn im HTML als <p class="btn-hint">...) */
+.btn-hint {
+  display: block;
+  margin: 8px auto 0;
+  font-size: 0.9rem;
+  color: #ccc;
+  text-align: center;
+  max-width: 320px;
+}
+
+/* Portfolio Sektion Styling */
+.portfolio-section {
+  padding: 20px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.15
+  ); /* Passend zu deinem dunklen Hintergrund */
+  color: #ffffff;
+}
+
+.section-title {
+  text-align: center;
+  font-family: "Dancing Script", cursive;
+  font-style: normal;
+  font-weight: 400;
+  color: #ff9900;
+  text-decoration: underline #333;
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #ccc;
+  margin-bottom: 50px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Glassmorphism Card Design */
+.portfolio-card {
+  background: rgb(255 255 255 / 0%);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-10px);
+  border-color: #3b82f6; /* Dein Blau-Ton */
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.5);
+}
+
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.status-work {
+  color: #f59e0b;
+}
+.status-done {
+  color: #10b981;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.fav-logo {
+  width: 35px;
+  height: 35px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 5px;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  margin: 0;
+  color: #fff;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+  justify-content: space-evenly;
+}
+
+.tag {
+  background: rgb(0 97 255 / 25%);
+  color: #000000;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  border: 1px solid rgb(0 0 0 / 30%);
+}
+
+.card-desc {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.btn-open {
+  display: block;
+  text-align: center;
+  background: #3b82f6;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-open:hover {
+  background: #2563eb;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+/* Deaktivierter Button Style */
+.btn-open.disabled {
+  background: #1e293b; /* Dunklerer Hintergrund */
+  color: #64748b; /* Graue Schrift */
+  cursor: not-allowed;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  pointer-events: none; /* Verhindert Klicks */
+  box-shadow: none;
+}
+
+/* Der Hinweis unter dem Button */
+.btn-hint {
+  font-size: 0.7rem;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  margin-top: 10px;
+  font-style: italic;
+  line-height: 1.2;
+}
+
+/* Hover-Effekt nur bei aktiven Buttons */
+.btn-open:not(.disabled):hover {
+  background: #2563eb;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+/* Footerbereich */
+
+footer {
+  background: linear-gradient(135deg, rgb(51, 51, 51), rgb(139, 0, 0));
+  color: white;
+  padding: 20px 10px;
+  margin-top: 60px;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.5);
+  border-top: #ff9900 solid 5px;
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  position: relative;
+  z-index: 500;
+}
+
+.footer-inhalt {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-inhalt h4 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #ff9900;
+  text-decoration: underline #333;
+}
+
+.footer-inhalt p {
+  font-size: 1em;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.footer-inhalt a {
+  color: #ccc;
+  text-decoration: none;
+  transition:
+    color 0.3s,
+    text-decoration 0.3s;
+}
+
+.footer-inhalt img {
+  max-width: 150px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+  border: solid 3px rgba(255, 255, 255, 0.15);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.footer-inhalt img:hover {
+  transform: scale(2.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.footer-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+.footer-lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transform: scale(0.95);
+  animation: zoomIn 0.3s ease;
+}
+
+.footer-lightbox.show img {
+  transform: scale(1);
+}
+
+.footer-radius {
+  background: linear-gradient(135deg, rgb(51, 51, 51), rgb(139, 0, 0));
+  padding: 20px;
+  border-top-left-radius: 50% 25%;
+  border-top-right-radius: 50% 25%;
+  margin-top: 20px;
+  border-top: #ff9900 solid 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 1);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+footer .hinweis {
+  font-size: 0.9em;
+  margin-bottom: 1px;
+  color: #ccc;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+footer .copyright {
+  font-size: 0.9em;
+  margin-bottom: 1px;
+  color: #ccc;
+  text-align: right;
+  align-items: end;
+  margin-bottom: 10px;
+}
+
+.footer-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #8b0000 60%, #ff9900 100%);
+  color: #fff;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(139, 0, 0, 0.12);
+  transition:
+    background 0.3s,
+    transform 0.2s,
+    box-shadow 0.3s;
+  letter-spacing: 0.03em;
+  margin-top: 10px;
+}
+
+.footer-button:hover {
+  background: linear-gradient(135deg, #ff9900 0%, #8b0000 100%);
+  color: #fff;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 16px rgba(139, 0, 0, 0.18);
+}
+
+.footer-navbar {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.footer-navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+
+.footer-navbar ul li {
+  display: inline;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.footer-navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1em;
+  transition:
+    color 0.3s,
+    text-decoration 0.3s;
+  letter-spacing: 0.02em;
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.hosting {
+  color: #ff9900;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hosting:hover {
+  border-bottom: 1px solid #ff9900;
+  border-top: 1px solid #ff9900;
+}
+
+.mailto {
+  color: #ccc;
+  text-decoration: none;
+  transition:
+    color 0.3s,
+    text-decoration 0.3s;
+}
+
+.mailto:hover {
+  color: #ff9900;
+}
+
+.ueber-mich-trigger {
+  color: #ff9900;
+  text-decoration: none;
+  transition:
+    color 0.3s,
+    text-decoration 0.3s;
+}
+
+.ueber-mich-trigger:hover {
+  border-bottom: 1px solid #ff9900;
+  color: #ccc;
+}
+
+#navbar-season-display {
+  display: none; /* Wird per JS aktiviert */
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  text-align: center;
+  width: 100%; /* Nimmt die volle Breite ein für perfekte Zentrierung */
+  padding: 10px 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Kontaktformular */
+#contactForm {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  max-width: 300px;
+  margin: 0 auto;
+  display: grid;
+  gap: 0.75rem;
+}
+
+#contactForm input[type="text"],
+#contactForm input[type="email"],
+#contactForm textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.25);
+  color: #fff;
+  font-size: 0.95rem;
+  resize: vertical;
+  transition:
+    box-shadow 0.15s,
+    border-color 0.15s,
+    transform 0.08s;
+}
+
+#contactForm input::placeholder,
+#contactForm textarea::placeholder {
+  color: #bfbfbf;
+  opacity: 0.9;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+  outline: none;
+  border-color: #ff9900;
+  box-shadow: 0 6px 18px rgba(255, 153, 0, 0.12);
+  transform: translateY(-1px);
+}
+
+/* Button */
+#contactForm button[type="submit"],
+#contactForm #submitBtn {
+  display: inline-block;
+  padding: 0.65rem 1.1rem;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #8b0000 60%, #ff9900 100%);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    opacity 0.12s;
+  justify-self: center;
+}
+
+#contactForm button[type="submit"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(139, 0, 0, 0.18);
+}
+
+/* Disabled state */
+#contactForm button[disabled] {
+  background: linear-gradient(180deg, #6f6f6f, #4f4f4f);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Antwort / Meldung */
+#formResponse {
+  display: none; /* JS zeigt an */
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+/* Varianten */
+#formResponse.success {
+  display: block;
+  background: rgba(32, 171, 27, 0.12);
+  color: #bff0c4;
+  border: 1px solid rgba(32, 171, 27, 0.18);
+}
+
+#formResponse.error {
+  display: block;
+  background: rgba(255, 0, 0, 0.06);
+  color: #ffbdbd;
+  border: 1px solid rgba(255, 0, 0, 0.12);
+}
+
+/* Alle Links innerhalb des SweetAlert Modals */
+.swal2-html-container a {
+  color: #3085d6;
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+/* Hover-Effekt */
+.swal2-html-container a:hover {
+  color: #205691;
+  border-bottom: 2px solid #205691;
+}
+
+/* Verhindert das "Hüpfen" beim Wechsel der Modale */
+.swal2-popup {
+  transition: opacity 0.2s ease-in-out !important;
+}
+
+/* In deiner style.css */
+.scrollable-swal {
+  max-height: 80vh; /* Maximal 80% der Bildschirmhöhe */
+  overflow-y: auto; /* Scrollbalken wenn nötig */
+}
+
+/* =============================
+   @keyframes
+============================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .card-header img {
+    display: block;
+    width: 50%;
+    height: auto;
+    object-fit: cover; /* zuschneiden ohne Verzerrung */
+    object-position: center; /* zentriert das Motiv */
+    border-radius: 8px;
+  }
+
+  #navbar-season-display {
+    font-size: 13px; /* Kleinere Schrift auf Handys */
+    padding: 2px 5px;
+  }
+  .countdown-label {
+    display: none; /* Versteckt "Silvester in:" auf kleinen Displays */
+  }
+
+  .mario-profile-card {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 80px;
+    padding-top: 80px; /* Platz für das zentrierte Foto */
+  }
+
+  .card-photo-container {
+    top: -70px; /* Überlappung nach oben */
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+
+  .card-content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .footer-navbar {
+    text-align: center;
+    margin-top: 35px;
+  }
+
+  .footer-navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+  }
+
+  .footer-navbar ul li {
+    display: inline;
+    margin: 0 10px;
+    font-weight: bold;
+  }
+
+  .footer-navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    transition:
+      color 0.3s,
+      text-decoration 0.3s;
+    letter-spacing: 0.02em;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px 5px;
+  }
+
+  .navbar .logo h1 {
+    font-size: 1.9rem;
+    font-family: "Dancing Script", cursive;
+    font-style: normal;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.45);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  .navbar ul {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: rgba(51, 51, 51, 0.95);
+    flex-direction: column;
+    align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .navbar ul.active {
+    max-height: 300px;
+  }
+
+  .navbar ul li {
+    margin: 15px 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .footer-radius {
+    background: linear-gradient(135deg, rgb(139, 0, 0), rgb(51, 51, 51));
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    border-top-left-radius: 50% 9%;
+    border-top-right-radius: 50% 9%;
+    border-top: #ff9900 solid 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 1);
+  }
+
+  .header-radius h1 {
+    font-size: 1.5em;
+    text-decoration: underline;
+    margin-bottom: 10px;
+  }
+
+  .header-radius p {
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
+
+  .about-me {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-me img {
+    max-width: 150px;
+    margin-bottom: 10px;
+  }
+
+  .vorstellung {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .vorstellung h3 {
+    text-align: center;
+  }
+
+  .vorstellung p {
+    margin-bottom: 10px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+  }
+
+  footer .hinweis {
+    text-align: center;
+  }
+
+  footer .copyright {
+    text-align: right;
+  }
+  .card-header img {
+    height: 140px;
+    max-height: 160px;
+  }
+  .card-header h3 {
+    font-family: "Dancing Script", cursive;
+    font-style: normal;
+    font-weight: 400;
+    color: #ff9900;
+    text-decoration: underline #333;
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+  }
+  #contactForm {
+    padding: 0.9rem;
+    margin: 0 12px;
+  }
+  #contactForm input[type="text"],
+  #contactForm input[type="email"],
+  #contactForm textarea {
+    font-size: 0.92rem;
+  }
+  #contactForm button[type="submit"] {
+    width: 100%;
+  }
+}
