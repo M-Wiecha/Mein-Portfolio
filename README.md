@@ -49,7 +49,7 @@ Dieses Projekt trackt standardmäßig keine personenbezogenen Daten ohne explizi
 ## 📄 Lizenz
 Dieses Portfolio und die darin enthaltenen maßgeschneiderten UI-Komponenten sind mein geistiges Eigentum. Der Quellcode dient zur Veranschaulichung meiner Fähigkeiten im Rahmen von Kundenakquisen und Präsentationen. Eine vollständige Eins-zu-eins-Kopie für kommerzielle Zwecke ist nicht gestattet. Inspirationen für einzelne CSS-Effekte sind jedoch herzlich willkommen!
 <p align="center">
-<strong>M. Wiecha – Webdesign & Webentwicklung</strong>
+<strong>M. Wiecha – Webdesiger</strong>
 
 <a href="https://mario-wiecha.de">mario-wiecha.de</a>
 </p>
