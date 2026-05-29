@@ -42,3 +42,6 @@ Da das Projekt auf nativem Code und lokal gehosteten Assets basiert, lässt es s
    ```bash
    git clone [https://github.com/M-Wiecha/Mein-Portfolio.git](https://github.com/M-Wiecha/Mein-Portfolio.git)
    cd Mein-Portfolio
+
+** 🔒 Datenschutz-Hinweis (GDPR / DSGVO)
+Dieses Projekt trackt standardmäßig keine personenbezogenen Daten ohne explizite Einwilligung. Durch den Verzicht auf externe Schriftarten (Google Fonts lokal eingebunden) und externe Skript-CDNs werden beim einfachen Laden der Seite keinerlei IP-Adressen an Drittanbieter übertragen.
