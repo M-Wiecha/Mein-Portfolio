@@ -45,3 +45,11 @@ Da das Projekt auf nativem Code und lokal gehosteten Assets basiert, lässt es s
 
 ## 🔒 Datenschutz-Hinweis (GDPR / DSGVO)
 Dieses Projekt trackt standardmäßig keine personenbezogenen Daten ohne explizite Einwilligung. Durch den Verzicht auf externe Schriftarten (Google Fonts lokal eingebunden) und externe Skript-CDNs werden beim einfachen Laden der Seite keinerlei IP-Adressen an Drittanbieter übertragen.
+
+## 📄 Lizenz
+Dieses Portfolio und die darin enthaltenen maßgeschneiderten UI-Komponenten sind mein geistiges Eigentum. Der Quellcode dient zur Veranschaulichung meiner Fähigkeiten im Rahmen von Kundenakquisen und Präsentationen. Eine vollständige Eins-zu-eins-Kopie für kommerzielle Zwecke ist nicht gestattet. Inspirationen für einzelne CSS-Effekte sind jedoch herzlich willkommen!
+<p align="center">
+<strong>M. Wiecha – Webdesign & Webentwicklung</strong>
+
+<a href="https://mario-wiecha.de">mario-wiecha.de</a>
+</p>
