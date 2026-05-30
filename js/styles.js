@@ -245,31 +245,25 @@ document.addEventListener("DOMContentLoaded", () => {
 const contactForm = document.getElementById("contactForm");
 const responseDiv = document.getElementById("formResponse");
 
-contactForm.addEventListener("submit", function (e) {
-  e.preventDefault(); // Verhindert das Neuladen der Seite
+if (contactForm) {
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault(); // Verhindert das Neuladen der Seite und das Absenden an senden.php
 
-  const formData = new FormData(this);
-  responseDiv.style.display = "block";
-  responseDiv.innerHTML = "Wird gesendet...";
-
-  fetch("senden.php", {
-    method: "POST",
-    body: formData,
-  })
-    .then((response) => response.text())
-    .then((data) => {
-      if (data.trim() === "success") {
-        responseDiv.innerHTML =
-          "<span style='color: green;'>Vielen Dank! Ich habe Deine Nachricht soeben erhalten.</span>";
-        contactForm.reset(); // Formular leeren
-      } else {
-        responseDiv.innerHTML = "<span style='color: red;'>" + data + "</span>";
-      }
-    })
-    .catch((error) => {
-      responseDiv.innerHTML = "Fehler: " + error;
+    // Schickes SweetAlert2-Modal für die Demo-Umgebung anzeigen
+    Swal.fire({
+      title: "Demo-Umgebung",
+      text: "Das Absenden von Formularen ist in dieser Live-Vorschau deaktiviert.",
+      icon: "info",
+      confirmButtonText: "Verstanden",
+      confirmButtonColor: "#3085d6",
+      background: "rgba(0, 0, 0, 0.75)", // Passend zu deinen restlichen Modals abgedunkelt
+      color: "rgba(255, 255, 255, 1)",   // Weiße Schrift für guten Kontrast
     });
-});
+
+    // Optional: Das Formular nach dem Klick zurücksetzen
+    contactForm.reset();
+  });
+}
 // ------------ //
 // Cookiebanne //
 // ---------- //
@@ -448,28 +442,3 @@ function loadPortfolio() {
 }
 
 document.addEventListener("DOMContentLoaded", loadPortfolio);
-
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('contactForm'); // einheitlicher ID-Name
-    if (!form) return;
-
-    // In der VSCode-Vorschau (vscode-vfs) Formulare nicht wirklich absenden
-    if (window.location && window.location.protocol === 'vscode-vfs:') {
-        form.addEventListener('submit', (event) => {
-            event.preventDefault();
-            if (typeof Swal !== 'undefined') {
-                Swal.fire({
-                    title: 'Demo-Umgebung',
-                    text: 'Das Absenden von Formularen ist in dieser Live‑Vorschau deaktiviert.',
-                    icon: 'info',
-                    confirmButtonText: 'Verstanden',
-                    confirmButtonColor: '#3085d6',
-                    background: '#ffffff',
-                });
-            } else {
-                // Fallback: kurze Benachrichtigung in Console
-                console.info('Demo-Umgebung: Formular-Absenden wurde verhindert (kein Swal).');
-            }
-        });
-    }
-});
