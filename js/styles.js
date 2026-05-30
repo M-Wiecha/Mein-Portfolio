@@ -448,3 +448,28 @@ function loadPortfolio() {
 }
 
 document.addEventListener("DOMContentLoaded", loadPortfolio);
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Ersetze '#deinFormularId' mit der ID oder Klasse deines Kontakt-/Anfrageformulars
+    const form = document.querySelector('#contact-form'); 
+
+    if (form) {
+        form.addEventListener('submit', (event) => {
+            // Verhindert das Neuladen der Seite und das Absenden an die PHP-Datei
+            event.preventDefault(); 
+
+            // SweetAlert2 Modal aufrufen
+            Swal.fire({
+                title: 'Demo-Umgebung',
+                text: 'Das Absenden von Formularen ist in dieser Live-Vorschau deaktiviert.',
+                icon: 'info',
+                confirmButtonText: 'Verstanden',
+                confirmButtonColor: '#3085d6', // Kannst du an deine Portfolio-Farbe anpassen
+                background: '#ffffff',        // Oder ein dunkler Ton für den Dark Mode
+                customClass: {
+                    popup: 'swal2-portfolio-style' // Für eventuelle eigene CSS-Anpassungen
+                }
+            });
+        });
+    }
+});
