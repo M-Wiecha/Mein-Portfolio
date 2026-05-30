@@ -449,26 +449,53 @@ function loadPortfolio() {
 
 document.addEventListener("DOMContentLoaded", loadPortfolio);
 
+// Wartet, bis das gesamte HTML-Dokument geladen ist
 document.addEventListener('DOMContentLoaded', () => {
-    // Ersetze '#deinFormularId' mit der ID oder Klasse deines Kontakt-/Anfrageformulars
+    
+    // Holt sich das Formular anhand der ID aus dem HTML
+    const form = document.querySelector('#// Wartet, bis das gesamte HTML-Dokument geladen ist
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // Holt sich das Formular anhand der ID aus dem HTML
     const form = document.querySelector('#contact-form'); 
 
+    // Prüft, ob das Formular auf der aktuellen Seite überhaupt existiert
     if (form) {
+        // Registriert das Event, wenn jemand auf den Absende-Button klickt
         form.addEventListener('submit', (event) => {
-            // Verhindert das Neuladen der Seite und das Absenden an die PHP-Datei
+            
+            // WICHTIG: Verhindert, dass das Formular die PHP-Datei aufruft und die Seite neu lädt
             event.preventDefault(); 
 
-            // SweetAlert2 Modal aufrufen
+            // Zeigt das SweetAlert2-Modal an
             Swal.fire({
                 title: 'Demo-Umgebung',
                 text: 'Das Absenden von Formularen ist in dieser Live-Vorschau deaktiviert.',
                 icon: 'info',
                 confirmButtonText: 'Verstanden',
-                confirmButtonColor: '#3085d6', // Kannst du an deine Portfolio-Farbe anpassen
-                background: '#ffffff',        // Oder ein dunkler Ton für den Dark Mode
-                customClass: {
-                    popup: 'swal2-portfolio-style' // Für eventuelle eigene CSS-Anpassungen
-                }
+                confirmButtonColor: '#3085d6', // Hier kannst du deine Portfolio-Farbe (z.B. Hex-Code) einsetzen
+                background: '#ffffff',        // Hintergrundfarbe des Modals (passend zu Light/Dark-Mode)
+            });
+        });
+    }
+});'); 
+
+    // Prüft, ob das Formular auf der aktuellen Seite überhaupt existiert
+    if (form) {
+        // Registriert das Event, wenn jemand auf den Absende-Button klickt
+        form.addEventListener('submit', (event) => {
+            
+            // WICHTIG: Verhindert, dass das Formular die PHP-Datei aufruft und die Seite neu lädt
+            event.preventDefault(); 
+
+            // Zeigt das SweetAlert2-Modal an
+            Swal.fire({
+                title: 'Demo-Umgebung',
+                text: 'Das Absenden von Formularen ist in dieser Live-Vorschau deaktiviert.',
+                icon: 'info',
+                confirmButtonText: 'Verstanden',
+                confirmButtonColor: '#3085d6', // Hier kannst du deine Portfolio-Farbe (z.B. Hex-Code) einsetzen
+                background: '#ffffff',        // Hintergrundfarbe des Modals (passend zu Light/Dark-Mode)
             });
         });
     }
