@@ -51,4 +51,4 @@ Dieses Portfolio und die darin enthaltenen maßgeschneiderten UI-Komponenten sin
 
 <p align="center">
 <strong>Mario Wiecha – Webdesiger</strong>
-<br /><a href="https://m-wiecha.github.io/Mein-Portfolio/"target="_blank">mario-wiecha.de</a></p>
+<br /><a href="https://www.mario-wiecha.de/" target="_blank">mario-wiecha.de</a></p>
