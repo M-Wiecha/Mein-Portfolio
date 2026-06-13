@@ -1,6 +1,6 @@
 // github-api.js (Deine externe JavaScript-Datei)
 
-const githubUsername = "mario-wiecha";
+const githubUsername = "M-Wiecha";
 
 async function fetchGitHubRepositories() {
     const container = document.getElementById('github-projects-container');
