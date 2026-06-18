@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="de">
   <head>
-    <meta charset="UTF-8" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -64,6 +63,7 @@
         ]
       }
     </script>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
@@ -74,6 +74,8 @@
       content="Webdesigner, Mario Wiecha, Portfolio, Webdesign, WordPress, moderne Websites, Webentwicklung, Freelancer, Referenzen, Leistungen"
     />
     <meta name="author" content="Mario Wiecha" />
+    <meta name="theme-color" content="#8B0000" />
+
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta property="og:title" content="Mario Wiecha | Webdesigner" />
     <meta
@@ -86,7 +88,6 @@
     <!-- Haupt-CSS -->
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/font.css" />
-    <link rel="stylesheet" href="css/fixes.css" />
     <link rel="icon" type="image/png" href="/img/logo.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/img/logo.png" />
     <link rel="shortcut icon" href="/img/logo.png" />
@@ -95,11 +96,6 @@
       name="apple-mobile-web-app-title"
       content="Mario Wiecha | Webdesigner"
     />
-    <style>
-      /* moved inline styles into a small internal stylesheet to remove inline attributes */
-      .form-response { margin-top: 15px; display: none; }
-      .muted-link { margin: 0 10px; color: #666; text-decoration: none; }
-    </style>
     <title>Mario Wiecha | Webdesigner</title>
   </head>
   <body>
@@ -137,11 +133,21 @@
               alt="Webdesigner Mario"
               class="profile-photo"
             />
+          </div>
+          <div class="card-content">
+            <h2 class="card-title">Mario Wiecha</h2>
+            <p class="card-subtitle">Leidenschaftlicher Webdesigner</p>
             <p class="card-description">
               Spezialisiert auf modernes Webdesign, SEO-Optimierung und
               responsive Websites alles aus einer Hand ...
-              <a href="#" id="ueber_mich">mehr</a>
+              <a
+                href="#"
+                id="ueber_mich"
+                style="margin: 0; color: #fff; text-decoration: none"
+                >mehr</a
+              >
             </p>
+            <a href="#my-skills" class="card-button">Zu meinen Leistungen</a>
             <!-- Weihnachten und Silvester -->
             <div id="navbar-season-display">
               <span id="season-content"></span>
@@ -279,12 +285,17 @@
 
             <button type="submit" id="submitBtn">Nachricht senden</button>
 
-            <div id="formResponse" class="form-response"></div>
-
+            <div
+              id="formResponse"
+              style="margin-top: 15px; display: none"
+            ></div>
+          </form>
+          <p>
+            Oder schreibe mir hier einfach eine Mail:<br />
             <a href="mailto:kontakt@mario-wiecha.de" class="mailto"
               >kontakt@mario-wiecha.de</a
             >
-          </form>
+          </p>
         </div>
         <div class="zertifikat">
           <h4>Zertifikat</h4>
@@ -294,19 +305,32 @@
       </div>
       <div class="footer-navbar">
         <div class="footer-links">
-          <a href="#" id="impressum-link" class="muted-link">Impressum</a>
-          <a href="#" id="datenschutz-link" class="muted-link">Datenschutz</a>
+          <a
+            href="#"
+            id="impressum-link"
+            style="margin: 0 10px; color: #666; text-decoration: none"
+            >Impressum</a
+          >
+          |
+          <a
+            href="#"
+            id="datenschutz-link"
+            style="margin: 0 10px; color: #666; text-decoration: none"
+            >Datenschutz</a
+          >
         </div>
-        <small>
-          <p class="copyright">
-            &copy; <span id="jahr"></span> by Mario Wiecha | Webdesigner. Alle
-            Rechte vorbehalten.
-          </p>
-        </small>
       </div>
+      <p class="hinweis">
+        Kein Ausweis von Umsatzsteuern gemäß Kleinunternehmerregelung §19 UStG
+      </p>
+      <small>
+        <p class="copyright">
+          &copy; <span id="jahr"></span> by Mario Wiecha | Webdesigner. Alle
+          Rechte vorbehalten.
+        </p>
+      </small>
     </footer>
     <!-- Haupt-JavaScript -->
-    <script src="js/github-api.js"></script>
     <script src="js/styles.js"></script>
     <script src="js/sweetalert2.all.min.js"></script>
   </body>
