@@ -1,6 +1,3 @@
-<p align="right">**Aktuelle Version:** v1.0</p>
-# 💻 Mein Professionelles Webdesign-Portfolio
-
 Willkommen im Repository meines offiziellen Webdesign-Portfolios, erreichbar unter [mario-wiecha.de](https://mario-wiecha.de). Diese Website dient als digitale Visitenkarte für meine Arbeit als freiberuflicher Webdesigner (Kleinunternehmer). Sie kombiniert modernes, interaktives Design mit höchsten Ansprüchen an Performance, native Code-Struktur und kompromisslosen Datenschutz.
 
 ---
