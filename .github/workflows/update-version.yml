@@ -13,11 +13,8 @@ jobs:
 
       - name: Update Version Tag in README
         run: |
-          # Holt die aktuelle Release-Tag-Nummer (z.B. v1.0)
           VERSION="${{ github.event.release.tag_name }}"
           echo "Neue Version erkannt: $VERSION"
-          
-          # Ersetzt den Text zwischen den Platzhaltern in der README.md
           sed -i "s|<!-- README_VERSION_PLACEHOLDER -->.*<!-- README_VERSION_PLACEHOLDER_END -->|<!-- README_VERSION_PLACEHOLDER -->$VERSION<!-- README_VERSION_PLACEHOLDER_END -->|g" README.md
 
       - name: Commit and Push Changes
