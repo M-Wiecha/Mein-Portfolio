@@ -1,4 +1,4 @@
-name: Update Version in README
+Aktuelle Version: <!-- README_VERSION_PLACEHOLDER -->v1.0<!-- README_VERSION_PLACEHOLDER_END -->name: Update Version in README
 
 on:
   release:
