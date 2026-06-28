@@ -1,0 +1,29 @@
+name: Update Version in README
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Update Version Tag in README
+        run: |
+          # Holt die aktuelle Release-Tag-Nummer (z.B. v1.0)
+          VERSION="${{ github.event.release.tag_name }}"
+          echo "Neue Version erkannt: $VERSION"
+          
+          # Ersetzt den Text zwischen den Platzhaltern in der README.md
+          sed -i "s|<!-- README_VERSION_PLACEHOLDER -->.*<!-- README_VERSION_PLACEHOLDER_END -->|<!-- README_VERSION_PLACEHOLDER -->$VERSION<!-- README_VERSION_PLACEHOLDER_END -->|g" README.md
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add README.md
+          git commit -m "chore: Version in README.md automatisch auf ${{ github.event.release.tag_name }} aktualisiert" || exit 0
+          git push origin main
