@@ -1,4 +1,14 @@
-Willkommen im Repository meines offiziellen Webdesign-Portfolios, erreichbar unter [mario-wiecha.de](https://mario-wiecha.de). Diese Website dient als digitale Visitenkarte für meine Arbeit als freiberuflicher Webdesigner (Kleinunternehmer). Sie kombiniert modernes, interaktives Design mit höchsten Ansprüchen an Performance, native Code-Struktur und kompromisslosen Datenschutz.
+# 🚀 Mein Webdesign-Portfolio
+
+Willkommen im Repository meines offiziellen Webdesign-Portfolios! Diese Website dient als digitale Visitenkarte für meine Arbeit als freiberuflicher Webdesigner (Kleinunternehmer). Sie kombiniert modernes, interaktives Design mit höchsten Ansprüchen an Performance, native Code-Struktur und kompromisslosen Datenschutz.
+
+Hier hast du vollen Einblick in den Quellcode, meine Arbeitsweise und die fortlaufende Versionierung des Projekts.
+
+---
+
+## 🔗 Live-Links
+* **Offizielle Domain:** [mario-wiecha.de](https://mario-wiecha.de)
+* **Alternative GitHub-Pages-Vorschau:** [m-wiecha.github.io/Mein-Portfolio/](https://m-wiecha.github.io/Mein-Portfolio/)
 
 ---
 
@@ -31,7 +41,7 @@ Das Portfolio wurde von Grund auf nativ entwickelt, um die volle Kontrolle über
 Da das Projekt auf nativem Code und lokal gehosteten Assets basiert, lässt es sich extrem unkompliziert lokal aufsetzen.
 
 ### Voraussetzungen
-* Ein lokaler Webserver mit PHP-Unterstützung (z. B. XAMPP, MAMP oder integriertes PHP).
+* Ein lokaler Webserver mit PHP-Unterstützung (z. B. XAMPP, MAMP, Herd oder integriertes PHP).
 * Ein Code-Editor (z. B. VS Code).
 
 ### Setup-Schritte
@@ -40,6 +50,7 @@ Da das Projekt auf nativem Code und lokal gehosteten Assets basiert, lässt es s
    ```bash
    git clone [https://github.com/M-Wiecha/Mein-Portfolio.git](https://github.com/M-Wiecha/Mein-Portfolio.git)
    cd Mein-Portfolio
+
 
 ## 🔒 Datenschutz-Hinweis (GDPR / DSGVO)
 Dieses Projekt trackt standardmäßig keine personenbezogenen Daten ohne explizite Einwilligung. Durch den Verzicht auf externe Schriftarten (Google Fonts lokal eingebunden) und externe Skript-CDNs werden beim einfachen Laden der Seite keinerlei IP-Adressen an Drittanbieter übertragen.
